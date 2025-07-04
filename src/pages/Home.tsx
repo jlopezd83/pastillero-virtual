@@ -58,15 +58,16 @@ const Home = ({ medicamentos, registros, setRegistros }: HomeProps) => {
     );
   };
 
-  // Filtrar medicamentos activos y que no hayan expirado
+  // Filtrar medicamentos activos y que no hayan expirado para la fecha seleccionada
   const medicamentosActivos = medicamentosSeguros.filter(m => {
     if (!m.activo) return false;
     
-    // Si tiene fecha de finalización, verificar que no haya expirado
+    // Si tiene fecha de finalización, verificar que no haya expirado para la fecha seleccionada
     if (m.fechaFinalizacion) {
-      const hoy = new Date();
+      const fechaSeleccionadaObj = new Date(fechaSeleccionada);
       const fechaFin = new Date(m.fechaFinalizacion);
-      return fechaFin >= hoy;
+      // La fecha de finalización debe ser mayor o igual a la fecha seleccionada
+      return fechaFin >= fechaSeleccionadaObj;
     }
     
     return true;
@@ -106,8 +107,23 @@ const Home = ({ medicamentos, registros, setRegistros }: HomeProps) => {
       {medicamentosActivos.length === 0 ? (
         <div className="empty-state">
           <div className="empty-icon">💊</div>
-          <h3>No hay medicamentos registrados</h3>
-          <p>Ve a "Agregar" para añadir tu primer medicamento</p>
+          <h3>
+            {fechaSeleccionada === obtenerFechaHoy() 
+              ? 'No hay medicamentos para hoy' 
+              : `No hay medicamentos para el ${new Date(fechaSeleccionada).toLocaleDateString('es-ES', { 
+                  weekday: 'long', 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}`
+            }
+          </h3>
+          <p>
+            {fechaSeleccionada === obtenerFechaHoy() 
+              ? 'Ve a "Agregar" para añadir medicamentos o revisa el "Resumen" para activar medicamentos pausados'
+              : 'Los medicamentos pueden haber expirado o estar pausados. Revisa el "Resumen" para más detalles'
+            }
+          </p>
         </div>
       ) : (
         <div className="medicamentos-hoy">

@@ -23,20 +23,29 @@ const Home = ({ medicamentos, registros, setRegistros }: HomeProps) => {
 
   const marcarComoTomado = (medicamentoId: string, momento: 'desayuno' | 'comida' | 'cena') => {
     const fecha = fechaSeleccionada;
+    
+    // Buscar registro existente para esta combinación específica
     const registroExistente = registrosSeguros.find(
-      r => r.medicamentoId === medicamentoId && r.fecha === fecha && r.momento === momento
+      r => r.medicamentoId === medicamentoId && 
+           r.fecha === fecha && 
+           r.momento === momento
     );
 
     if (registroExistente) {
-      // Actualizar registro existente
+      // Si existe, alternar el estado de tomado
+      const nuevoEstado = !registroExistente.tomado;
       const nuevosRegistros = registrosSeguros.map(r => 
         r.id === registroExistente.id 
-          ? { ...r, tomado: !r.tomado, horaTomado: !r.tomado ? obtenerHoraActual() : undefined }
+          ? { 
+              ...r, 
+              tomado: nuevoEstado, 
+              horaTomado: nuevoEstado ? obtenerHoraActual() : undefined 
+            }
           : r
       );
       setRegistros(nuevosRegistros);
     } else {
-      // Crear nuevo registro
+      // Si no existe, crear un nuevo registro como tomado
       const nuevoRegistro: RegistroMedicamento = {
         id: generarId(),
         medicamentoId,
@@ -50,12 +59,17 @@ const Home = ({ medicamentos, registros, setRegistros }: HomeProps) => {
   };
 
   const estaTomado = (medicamentoId: string, momento: 'desayuno' | 'comida' | 'cena') => {
-    return registrosSeguros.some(
+    const registro = registrosSeguros.find(
       r => r.medicamentoId === medicamentoId && 
            r.fecha === fechaSeleccionada && 
-           r.momento === momento && 
-           r.tomado
+           r.momento === momento
     );
+    return registro ? registro.tomado : false;
+  };
+
+  // Función para depurar registros (temporal)
+  const obtenerRegistrosDelDia = () => {
+    return registrosSeguros.filter(r => r.fecha === fechaSeleccionada);
   };
 
   // Filtrar medicamentos activos y que no hayan expirado para la fecha seleccionada
@@ -100,6 +114,12 @@ const Home = ({ medicamentos, registros, setRegistros }: HomeProps) => {
               {registrosSeguros.filter(r => r.fecha === fechaSeleccionada && r.tomado).length}
             </span>
             <span className="resumen-label">Tomados hoy</span>
+          </div>
+          <div className="resumen-item">
+            <span className="resumen-numero">
+              {obtenerRegistrosDelDia().length}
+            </span>
+            <span className="resumen-label">Total registros</span>
           </div>
         </div>
       </div>

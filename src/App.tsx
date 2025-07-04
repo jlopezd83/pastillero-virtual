@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
+import InstallPWA from './components/InstallPWA';
 import Home from './pages/Home';
 import Resumen from './pages/Resumen';
 import AgregarMedicamento from './pages/AgregarMedicamento';
@@ -28,6 +29,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <InstallPWA />
         <main className="container">
           <Routes>
             <Route 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import type { Medicamento } from '../types';
-import { generarId, obtenerFechaHoy } from '../utils/helpers';
+import { obtenerFechaHoy } from '../utils/helpers';
 
 interface EditarMedicamentoProps {
   medicamentos: Medicamento[];

@@ -19,9 +19,7 @@ const Home = ({ medicamentos, registros, setRegistros }: HomeProps) => {
 
   const momentos = ['desayuno', 'comida', 'cena'] as const;
 
-  const obtenerRegistrosDelDia = (fecha: string) => {
-    return registrosSeguros.filter(registro => registro.fecha === fecha);
-  };
+
 
   const marcarComoTomado = (medicamentoId: string, momento: 'desayuno' | 'comida' | 'cena') => {
     const fecha = fechaSeleccionada;

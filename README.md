@@ -30,7 +30,7 @@ Una aplicación web moderna para gestionar tu medicación diaria de manera fáci
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/pastillero-virtual.git
+git clone https://github.com/jlopezd83/pastillero-virtual.git
 
 # Entrar al directorio
 cd pastillero-virtual
@@ -138,8 +138,8 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+**Javier López**
+- GitHub: [@jlopezd83](https://github.com/jlopezd83)
 
 ## 🙏 Agradecimientos
 

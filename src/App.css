@@ -1,0 +1,1087 @@
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header-content {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  opacity: 0.9;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 70px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background-color: rgba(255,255,255,0.3);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+.nav-text {
+  font-size: 0.8rem;
+}
+
+/* Container principal */
+.container {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Página Home */
+.home {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.home-header {
+  margin-bottom: 2rem;
+}
+
+.fecha-selector {
+  margin-bottom: 1.5rem;
+}
+
+.fecha-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.fecha-icon {
+  font-size: 1.2rem;
+}
+
+.fecha-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.fecha-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.resumen-dia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resumen-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.resumen-numero {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.resumen-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.empty-state p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.momento-grupo {
+  margin-bottom: 2rem;
+}
+
+.momento-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.momento-icon {
+  font-size: 1.5rem;
+}
+
+.momento-titulo {
+  color: #667eea;
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+}
+
+.medicamentos-count {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.medicamentos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.medicamento-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.medicamento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.medicamento-icon {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.medicamento-info {
+  flex: 1;
+}
+
+.medicamento-info h3 {
+  color: #333;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.medicamento-dosis {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.medicamento-tomado {
+  color: #28a745;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.check-icon {
+  font-weight: bold;
+}
+
+.btn-tomar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 25px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.btn-tomar:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-tomar.tomado {
+  background: #6c757d;
+}
+
+.btn-tomar.tomado:hover {
+  background: #5a6268;
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+.btn-text {
+  font-size: 0.9rem;
+}
+
+/* Página Agregar Medicamento */
+.agregar-medicamento,
+.editar-medicamento {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.agregar-header,
+.editar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.agregar-icon,
+.editar-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.agregar-medicamento h2,
+.editar-medicamento h2 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.agregar-medicamento p,
+.editar-medicamento p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.form-medicamento {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input[type="text"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.momentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.momento-card {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.momento-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.momento-card.seleccionado {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.momento-card input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.momento-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.momento-card-icon {
+  font-size: 2rem;
+}
+
+.momento-card-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Opciones de duración */
+.duracion-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.duracion-option {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.duracion-option:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.duracion-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.duracion-option input[type="radio"]:checked + .duracion-content {
+  color: #667eea;
+}
+
+.duracion-option input[type="radio"]:checked {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.duracion-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.duracion-icon {
+  font-size: 1.5rem;
+}
+
+.duracion-text {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.fecha-finalizacion {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e1e5e9;
+}
+
+.fecha-finalizacion .fecha-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.fecha-finalizacion input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.fecha-finalizacion input[type="date"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: #6c757d;
+  border: 2px solid #6c757d;
+}
+
+.btn-secondary:hover {
+  background: #6c757d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Página Historial */
+.historial {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.historial h2 {
+  color: #667eea;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.estadisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.stat-numero {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.filtro-fecha {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.filtro-fecha label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.filtro-fecha select {
+  padding: 0.5rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  min-width: 200px;
+}
+
+.fecha-grupo {
+  margin-bottom: 2rem;
+}
+
+.fecha-titulo {
+  color: #667eea;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 1.2rem;
+}
+
+.registros-del-dia {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.registro-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.registro-info h4 {
+  color: #333;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.registro-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.registro-momento {
+  color: #667eea !important;
+  font-weight: 500;
+}
+
+.registro-estado {
+  text-align: right;
+}
+
+.estado {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.estado.tomado {
+  color: #28a745;
+}
+
+.estado.no-tomado {
+  color: #dc3545;
+}
+
+.hora-tomado {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Página Resumen */
+.resumen {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.resumen h2 {
+  color: #667eea;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.estadisticas-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.seccion-medicamentos {
+  margin-bottom: 2rem;
+}
+
+.seccion-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 1.2rem;
+}
+
+.seccion-titulo.activos {
+  color: #28a745;
+}
+
+.seccion-titulo.inactivos {
+  color: #6c757d;
+}
+
+.icono {
+  font-size: 1.4rem;
+}
+
+.medicamento-resumen-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.medicamento-resumen-item.activo {
+  border-left-color: #28a745;
+}
+
+.medicamento-resumen-item.inactivo {
+  border-left-color: #6c757d;
+  opacity: 0.7;
+}
+
+.medicamento-resumen-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.medicamento-info h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.medicamento-info .dosis {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.medicamento-info .momentos {
+  color: #667eea;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.medicamento-info .fecha-creacion {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.fecha-finalizacion-info {
+  color: #ff6b35;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.fecha-finalizacion-info .fecha-icon {
+  font-size: 0.9rem;
+}
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.btn-accion {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-accion.pausar {
+  background: #ffc107;
+  color: #212529;
+}
+
+.btn-accion.pausar:hover {
+  background: #e0a800;
+}
+
+.btn-accion.reactivar {
+  background: #28a745;
+  color: white;
+}
+
+.btn-accion.reactivar:hover {
+  background: #218838;
+}
+
+.btn-accion.eliminar {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-accion.eliminar:hover {
+  background: #c82333;
+}
+
+.btn-accion.editar {
+  background: #17a2b8;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-accion.editar:hover {
+  background: #138496;
+  transform: translateY(-1px);
+}
+
+/* Estado de carga */
+.loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+}
+
+.loading p {
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .nav {
+    gap: 0.25rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    min-width: 60px;
+  }
+  
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+  
+  .nav-text {
+    font-size: 0.7rem;
+  }
+  
+  .container {
+    padding: 0.75rem;
+  }
+  
+  .home,
+  .agregar-medicamento,
+  .editar-medicamento,
+  .historial,
+  .resumen {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .resumen-dia {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .resumen-item {
+    padding: 0.75rem;
+  }
+  
+  .resumen-numero {
+    font-size: 1.5rem;
+  }
+  
+  .medicamento-item,
+  .registro-item,
+  .medicamento-resumen-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .medicamento-icon {
+    align-self: center;
+  }
+  
+  .btn-tomar {
+    align-self: stretch;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .estadisticas,
+  .estadisticas-resumen {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .momentos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .momento-card {
+    padding: 0.75rem;
+  }
+  
+  .duracion-options {
+    gap: 0.75rem;
+  }
+  
+  .duracion-option {
+    padding: 0.75rem;
+  }
+  
+  .fecha-finalizacion {
+    padding: 0.75rem;
+  }
+  
+  .acciones {
+    flex-direction: row;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .btn-accion {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .btn-accion.editar {
+    text-align: center;
+  }
+  
+  .fecha-input {
+    padding: 0.75rem;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+  
+  .empty-state h3 {
+    font-size: 1.1rem;
+  }
+  
+  .empty-state p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.5rem;
+    min-width: 50px;
+  }
+  
+  .nav-icon {
+    font-size: 1rem;
+  }
+  
+  .nav-text {
+    font-size: 0.65rem;
+  }
+  
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .home,
+  .agregar-medicamento,
+  .historial,
+  .resumen {
+    padding: 0.75rem;
+  }
+  
+  .agregar-icon,
+  .editar-icon {
+    font-size: 2.5rem;
+  }
+  
+  .agregar-medicamento h2,
+  .editar-medicamento h2 {
+    font-size: 1.5rem;
+  }
+  
+  .momento-titulo {
+    font-size: 1.1rem;
+  }
+  
+  .medicamento-info h3 {
+    font-size: 1rem;
+  }
+  
+  .medicamento-info h4 {
+    font-size: 1rem;
+  }
+}
